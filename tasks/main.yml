@@ -1,0 +1,14 @@
+---
+- name: creating a httpd
+  yum:
+   name: "{{name}}"
+   state: present
+- name: configurating files
+  copy:
+   content: "zindagi ki liye zaan jaroori hai"
+   dest: "{{path}}"
+- name: start the sevice
+  service:
+   name: "{{name}}"
+   state: started
+
